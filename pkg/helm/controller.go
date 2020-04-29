@@ -321,6 +321,7 @@ func args(chart *helmv1.HelmChart) []string {
 	spec := chart.Spec
 	args := []string{
 		"install",
+		"--atomic",
 	}
 	if spec.TargetNamespace != "" {
 		args = append(args, "--namespace", spec.TargetNamespace)
